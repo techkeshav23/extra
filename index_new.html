@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technovation Quiz Challenge</title>
+    <link rel="stylesheet" href="styles_new.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <div class="quiz-header">
+                <h1 class="title">Technovation Quiz Challenge</h1>
+                <p class="subtitle">Test your knowledge with our interactive quiz</p>
+                <div class="quiz-info">
+                    <div class="info-item">
+                        <span class="info-number">5</span>
+                        <span class="info-label">Questions</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-number">~5</span>
+                        <span class="info-label">Minutes</span>
+                    </div>
+                </div>
+            </div>
+            <button class="btn" onclick="startGame()">Start Quiz</button>
+        </div>
+
+        <!-- Level 1: Name -->
+        <div id="level-1" class="screen">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 20%;"></div>
+            </div>
+            <div class="question-number">Question 1 of 5</div>
+            <h2 class="question">What is your name?</h2>
+            <input type="text" id="answer-1" class="answer-input" placeholder="Enter your name..." autocomplete="off">
+            <button class="btn" onclick="checkAnswer(1)">Submit</button>
+            <p id="hint-1" class="feedback-text"></p>
+        </div>
+
+        <!-- Level 2: Club Name -->
+        <div id="level-2" class="screen">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 40%;"></div>
+            </div>
+            <div class="question-number">Question 2 of 5</div>
+            <h2 class="question">What is the full name of our club?</h2>
+            <p class="question-hint">Hint: Check our Instagram</p>
+            <div class="options">
+                <button class="option-btn" onclick="checkMCQ(2, 0)">
+                    <span class="option-letter">A</span>
+                    <span class="option-text">Technovation Club</span>
+                </button>
+                <button class="option-btn" onclick="checkMCQ(2, 1)">
+                    <span class="option-letter">B</span>
+                    <span class="option-text">Technovation : The Networking Club</span>
+                </button>
+                <button class="option-btn" onclick="checkMCQ(2, 2)">
+                    <span class="option-letter">C</span>
+                    <span class="option-text">The Networking Club</span>
+                </button>
+                <button class="option-btn" onclick="checkMCQ(2, 3)">
+                    <span class="option-letter">D</span>
+                    <span class="option-text">Technovation Network</span>
+                </button>
+            </div>
+            <p id="hint-2" class="feedback-text"></p>
+        </div>
+
+        <!-- Level 3: Movie -->
+        <div id="level-3" class="screen">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 60%;"></div>
+            </div>
+            <div class="question-number">Question 3 of 5</div>
+            <h2 class="question">Best movie released in December 2025?</h2>
+            <p class="question-hint">Released on December 5, 2025</p>
+            <div class="options">
+                <button class="option-btn" onclick="checkMCQ(3, 0)">
+                    <span class="option-letter">A</span>
+                    <span class="option-text">Avatar 3</span>
+                </button>
+                <button class="option-btn" onclick="checkMCQ(3, 1)">
+                    <span class="option-letter">B</span>
+                    <span class="option-text">Dhurandhar</span>
+                </button>
+                <button class="option-btn" onclick="checkMCQ(3, 2)">
+                    <span class="option-letter">C</span>
+                    <span class="option-text">The Matrix 5</span>
+                </button>
+                <button class="option-btn" onclick="checkMCQ(3, 3)">
+                    <span class="option-letter">D</span>
+                    <span class="option-text">Inception 2</span>
+                </button>
+            </div>
+            <p id="hint-3" class="feedback-text"></p>
+        </div>
+
+        <!-- Level 4: JSON -->
+        <div id="level-4" class="screen">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 80%;"></div>
+            </div>
+            <div class="question-number">Question 4 of 5</div>
+            <h2 class="question">What is the full form of JSON?</h2>
+            <div class="options">
+                <button class="option-btn" onclick="checkMCQ(4, 0)">
+                    <span class="option-letter">A</span>
+                    <span class="option-text">Java Syntax Object Notation</span>
+                </button>
+                <button class="option-btn" onclick="checkMCQ(4, 1)">
+                    <span class="option-letter">B</span>
+                    <span class="option-text">JavaScript Object Notation</span>
+                </button>
+                <button class="option-btn" onclick="checkMCQ(4, 2)">
+                    <span class="option-letter">C</span>
+                    <span class="option-text">JavaScript Online Network</span>
+                </button>
+                <button class="option-btn" onclick="checkMCQ(4, 3)">
+                    <span class="option-letter">D</span>
+                    <span class="option-text">Java Script Object Node</span>
+                </button>
+            </div>
+            <p id="hint-4" class="feedback-text"></p>
+        </div>
+
+        <!-- Level 5: ABES -->
+        <div id="level-5" class="screen">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 100%;"></div>
+            </div>
+            <div class="question-number">Question 5 of 5</div>
+            <h2 class="question">What is the full form of ABES?</h2>
+            <div class="options">
+                <button class="option-btn" onclick="checkMCQ(5, 0)">
+                    <span class="option-letter">A</span>
+                    <span class="option-text">Academy of Business and Engineering Sciences</span>
+                </button>
+                <button class="option-btn" onclick="checkMCQ(5, 1)">
+                    <span class="option-letter">B</span>
+                    <span class="option-text">Advanced Business Engineering School</span>
+                </button>
+                <button class="option-btn" onclick="checkMCQ(5, 2)">
+                    <span class="option-letter">C</span>
+                    <span class="option-text">Academy of Business Education and Sciences</span>
+                </button>
+                <button class="option-btn" onclick="checkMCQ(5, 3)">
+                    <span class="option-letter">D</span>
+                    <span class="option-text">Association of Business Engineering Students</span>
+                </button>
+            </div>
+            <p id="hint-5" class="feedback-text"></p>
+        </div>
+
+        <!-- Victory Screen -->
+        <div id="victory-screen" class="screen">
+            <div class="success-icon">✓</div>
+            <h1 class="victory-title">Quiz Completed!</h1>
+            <p class="victory-text">Congratulations on completing the quiz!</p>
+            <div class="score-display">
+                <div class="score-item">
+                    <span class="score-label">Your Score</span>
+                    <span class="score-value" id="final-score">5/5</span>
+                </div>
+            </div>
+            <div class="treasure-reveal">
+                <img src="1.png" alt="Completion Badge" id="treasure-image">
+            </div>
+            <button class="btn" onclick="restartGame()">Retake Quiz</button>
+        </div>
+    </div>
+
+    <script src="game_new.js"></script>
+</body>
+</html>
